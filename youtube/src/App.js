@@ -1,25 +1,24 @@
 import React from 'react'
 import Home from './Home'
 
-// Usando themeProvider e createMuiTheme para personalizar o tema padrão do material
-import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core';
 
-//Classes de estilização
-const useStyles = makeStyles({
-  root: {
-    background: 'red',
-    height: '100vh'
-  }
-})
+// Usando themeProvider e createMuiTheme para personalizar o tema padrão do material
+import { ThemeProvider, createMuiTheme } from '@material-ui/core';
 
 function App() {
   const theme = createMuiTheme({
     palette: {
+      type: 'dark',
       primary: {
         main: '#f44336',
       },
       secondary: {
-        main: '#3f51b5'
+        main: '#3ea6ff'
+      },
+      background: {
+        default: '#232323',
+        dark: '#181818',
+        paper: '#232323',
       }
     },
   })
