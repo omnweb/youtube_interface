@@ -1,16 +1,33 @@
 import React from 'react'
-import ReactDOM from 'react-dom';
-import Button from '@material-ui/core/Button';
+import Home from './Home'
 
+// Usando themeProvider e createMuiTheme para personalizar o tema padrão do material
+import { makeStyles, ThemeProvider, createMuiTheme } from '@material-ui/core';
+
+//Classes de estilização
+const useStyles = makeStyles({
+  root: {
+    background: 'red',
+    height: '100vh'
+  }
+})
 
 function App() {
+  const theme = createMuiTheme({
+    palette: {
+      primary: {
+        main: '#f44336',
+      },
+      secondary: {
+        main: '#3f51b5'
+      }
+    },
+  })
   return (
-    <Button variant="contained" color="primary">
-      Hello World
-    </Button>
+    <ThemeProvider theme={theme}>
+      <Home />
+    </ThemeProvider>
   )
-
-  ReactDOM.render(<App />, document.querySelector('#app'));
 }
 
 export default App;
