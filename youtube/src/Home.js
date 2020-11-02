@@ -1,21 +1,21 @@
-import React from 'react'
+import React from 'react';
 import {
     makeStyles,
     AppBar,
     Toolbar,
     IconButton,
-    Button,
     Drawer,
+    Button,
     List,
+    Typography,
+    Divider,
     ListItem,
     ListItemIcon,
-    // ListSubheader,
-    Divider,
     ListItemText,
     Box,
-    Typography,
     Grid,
-    Hidden
+    Hidden,
+    Switch,
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import AccountCircle from '@material-ui/icons/AccountCircle';
@@ -176,9 +176,10 @@ const videos = [
     },
 ];
 
-function Home() {
+function Home({ darkMode, setDarkMode }) {
     const classes = useStyles();
     const theme = useTheme();
+
     return (
         <div className={classes.root}>
             <AppBar color="inherit" className={classes.appBar}>
@@ -192,6 +193,7 @@ function Home() {
                     </IconButton>
                     <img src={theme.palette.type === 'dark' ? '/images/branco.png' : '/images/preto.png'} alt="logo" className={classes.logo} />
                     <div className={classes.grow} />
+                    <Switch onChange={() => setDarkMode(!darkMode)} value={darkMode} className={classes.icons} />
                     <IconButton
                         className={classes.icons}
 
@@ -205,7 +207,7 @@ function Home() {
                         <Apps />
                     </IconButton>
                     <IconButton
-                        className={classes.Notificações}
+                        className={classes.icons}
 
                     >
                         <MoreVert />
