@@ -256,7 +256,7 @@ function Home({ darkMode, setDarkMode }) {
                                 <Box p={4}>
                                     <Typography variant="body2">
                                         Faça login para curtir vídeos, comentar e se inscrever.
-                            </Typography>
+                                    </Typography>
                                     <Box mt={2}>
                                         <Button startIcon={<AccountCircle />} variant="outlined" color="secondary">Fazer Login</Button>
                                     </Box>
@@ -351,7 +351,7 @@ function Home({ darkMode, setDarkMode }) {
                         style={{ fontWeight: 600 }}
                     >
                         Recomendados
-                </Typography>
+                    </Typography>
 
                     <Grid container spacing={3}>
                         {
@@ -388,7 +388,6 @@ function Home({ darkMode, setDarkMode }) {
                             ))
                         }
                     </Grid>
-
                 </Box>
             </Box>
         </div>
